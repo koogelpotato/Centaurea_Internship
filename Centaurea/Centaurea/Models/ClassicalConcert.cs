@@ -1,4 +1,5 @@
 ﻿using Centaurea.Data.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Centaurea.Models
 {

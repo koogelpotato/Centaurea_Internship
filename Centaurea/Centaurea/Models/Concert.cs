@@ -2,7 +2,7 @@
 
 namespace Centaurea.Models
 {
-    public class Concert
+    public abstract class Concert
     {
         [Key]
         public int ConcertId { get; set; }

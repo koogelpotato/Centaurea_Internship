@@ -1,6 +1,7 @@
 ﻿using Centaurea.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Dynamic;
 
 namespace Centaurea.Controllers
 {
@@ -13,7 +14,11 @@ namespace Centaurea.Controllers
         }
         public async Task<IActionResult> Concerts()
         {
-            return View(await _context.Concerts.ToListAsync());
+            dynamic allConcerts = new ExpandoObject();
+            allConcerts.RegularConcerts = _context.RegularConcerts.ToListAsync();
+            allConcerts.Parties = _context.Parties.ToListAsync();
+            allConcerts.ClassicalConcerts = _context.ClassicalConcerts.ToListAsync();
+            return View(allConcerts);
         }
     }
 }
