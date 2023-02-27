@@ -15,10 +15,12 @@ namespace Centaurea.Controllers
         }
         public async Task<IActionResult> Concerts()
         {
-            //allConcerts.RegularConcerts = await _context.RegularConcerts.ToListAsync();
-            //allConcerts.ClassicalConcerts = await _context.ClassicalConcerts.ToListAsync();
-            //allConcerts.Parties = await _context.Parties.ToListAsync();
-            return View();
+            ConcertViewModel allConcerts = new ConcertViewModel();
+            allConcerts.RegularConcerts = await _context.RegularConcerts.ToListAsync();
+            allConcerts.ClassicalConcerts = await _context.ClassicalConcerts.ToListAsync();
+            allConcerts.Parties = await _context.Parties.ToListAsync();
+
+            return View(allConcerts);
         }
     }
 }
