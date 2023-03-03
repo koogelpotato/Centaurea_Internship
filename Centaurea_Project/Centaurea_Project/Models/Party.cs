@@ -1,4 +1,6 @@
-﻿namespace Centaurea_Project.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Centaurea_Project.Models
 {
     public class Party : Concert
     {

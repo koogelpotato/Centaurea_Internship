@@ -1,3 +1,4 @@
+import ConcertList from "./components/ConcertsDisplay";
 import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
@@ -15,6 +16,12 @@ const AppRoutes = [
     path: '/fetch-data',
     element: <FetchData />
   },
+  {
+      path: '/concerts-list',
+      element: <ConcertList />
+  },
+
+
 ];
 
 export default AppRoutes;

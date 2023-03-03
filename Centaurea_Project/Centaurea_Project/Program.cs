@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IClassicalConcertRepository, ClassicalConcertRepository>();
 builder.Services.AddScoped<IPartyConcertRepository, PartyConcertRepository>();
 builder.Services.AddScoped<IRegularConcertRepository, RegularConcertRepository>();
@@ -18,7 +19,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<Centaurea_ProjectContext>();
 var app = builder.Build();
 
-app.UseSwagger();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -40,6 +40,5 @@ app.MapControllerRoute(
 app.MapFallbackToFile("index.html"); ;
 app.UseAuthentication();;
 
-app.UseSwaggerUI();
 
 app.Run();
