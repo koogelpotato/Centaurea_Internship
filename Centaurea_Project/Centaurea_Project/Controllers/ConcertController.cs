@@ -16,7 +16,9 @@ namespace Centaurea_Project.Controllers
         private readonly IClassicalConcertRepository _classicConcertRepository;
         private readonly IRegularConcertRepository _regularConcertRepository;
         private readonly IPartyConcertRepository _partyConcertRepository;
-
+        private readonly IGenericRepository<ClassicalConcert> _classicConcertRepositoryBt;
+        private readonly IGenericRepository<Party> _partyConcertRepositoryBt;
+        private readonly IGenericRepository<RegularConcert> _regularConcertRepositoryBt;
         public ConcertController(IMapper mapper,IClassicalConcertRepository classicConcertRepository, IRegularConcertRepository regularConcertRepository, IPartyConcertRepository partyConcertRepository)
         {
             _mapper = mapper;
